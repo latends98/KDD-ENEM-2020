@@ -1,8 +1,8 @@
 import pandas as pd
 
 # Carregar as regras obtidas
-aprioriRules = pd.read_csv("apriori_v8_rules_sup14conf100.csv", sep=';', index_col=False, encoding='utf-8')
-fpgrowthRules = pd.read_csv("fpgrowth_v8_rules_sup14conf100.csv", sep=';', index_col=False, encoding='utf-8')
+aprioriRules = pd.read_csv("Regras_Apriori_sup10conf90.csv", sep=';', index_col=False, encoding='utf-8')
+fpgrowthRules = pd.read_csv("Regras_FP-Growth_sup10conf90.csv", sep=';', index_col=False, encoding='utf-8')
 
 # Reordenar as regras do Apriori
 aprioriRules = aprioriRules.sort_values(by=['consequent', 'antecedent'])
