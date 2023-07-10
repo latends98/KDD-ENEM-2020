@@ -10,13 +10,13 @@ db = pd.read_csv(database + ".csv", sep=';', header=None, encoding='utf-8')
 # base = db.to_dict(orient='index')
 base = db.to_numpy()
 
-# parametros do algoritmo
+# escolher algoritmo para calibrar
 algoritmo = 2  # 1 - Apriori; 2 - FP-Growth
+
+# parametros do algoritmo
 target = 'r'  # minerar regras de associação
 supp_lista = [10, 12, 14, 16, 18, 20, 30, 40, 50]  # lista de suporte
 conf_lista = [75, 80, 85, 90, 95, 100]  # lista de confiança
-supp_lista = [10, 12, 14]  # lista de suporte
-conf_lista = [95, 100]  # lista de confiança
 zmin = 2  # regras contém pelo menos 2 itens (1 antecedente e 1 consequente)
 zmax = 6  # quantidade máxima de itens por regra
 report = 'XCL'  # apresentar valor de suporte, confiança e lift das regras
