@@ -63,7 +63,6 @@ i = [1]
 
 # Lista de tamanhos da base de dados para testar (1% até 100%)
 sampleList = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-sampleList = [1, 10]
 
 for sample in sampleList:
     if sample < 100:
