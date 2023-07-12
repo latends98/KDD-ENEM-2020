@@ -76,18 +76,18 @@ for sample in sampleList:
         i[0] = 1
 
     # Pegar tempo de execução pro Apriori
-    tempo = timeit.repeat(stmt='my_apriori(base, sample)', setup='', repeat=3, number=1, globals=globals())
+    tempoAP = timeit.repeat(stmt='my_apriori(base, sample)', setup='', repeat=3, number=1, globals=globals())
     # Jogar na matriz o tempo de cada execução
-    matrixAP.at[str(sample) + "%", "Tempo Exec1"] = tempo[0]
-    matrixAP.at[str(sample) + "%", "Tempo Exec2"] = tempo[1]
-    matrixAP.at[str(sample) + "%", "Tempo Exec3"] = tempo[2]
+    matrixAP.at[str(sample) + "%", "Tempo Exec1"] = tempoAP[0]
+    matrixAP.at[str(sample) + "%", "Tempo Exec2"] = tempoAP[1]
+    matrixAP.at[str(sample) + "%", "Tempo Exec3"] = tempoAP[2]
 
     # Pegar tempo de execução pro FP-Growth
-    tempo = timeit.repeat(stmt='my_fp_growth(base, sample)', setup='', repeat=3, number=1, globals=globals())
+    tempoFP = timeit.repeat(stmt='my_fp_growth(base, sample)', setup='', repeat=3, number=1, globals=globals())
     # Jogar na matriz o tempo de cada execução
-    matrixFP.at[str(sample) + "%", "Tempo Exec1"] = tempo[0]
-    matrixFP.at[str(sample) + "%", "Tempo Exec2"] = tempo[1]
-    matrixFP.at[str(sample) + "%", "Tempo Exec3"] = tempo[2]
+    matrixFP.at[str(sample) + "%", "Tempo Exec1"] = tempoFP[0]
+    matrixFP.at[str(sample) + "%", "Tempo Exec2"] = tempoFP[1]
+    matrixFP.at[str(sample) + "%", "Tempo Exec3"] = tempoFP[2]
 
 # Criar arquivo com as matrizes
 matrixAP.to_csv("Desempenho_tam_Apriori_sup" + str(supp) + "_conf" + str(conf) + ".csv", sep=';', decimal=',')
